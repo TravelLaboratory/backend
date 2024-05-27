@@ -52,7 +52,7 @@ jobs:
         
     - name: Upload to S3
       run: |
-        cd ./demo
+        cd ./demo/deploy
         aws s3 cp \
            --region ap-northeast-2 \
           ./spring-build.zip s3://travel-spring
