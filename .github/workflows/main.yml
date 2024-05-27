@@ -55,4 +55,4 @@ jobs:
         cd ./demo
         aws s3 cp \
            --region ap-northeast-2 \
-          ./spring-build.zip s3://tcat-spring
+          ./spring-build.zip s3://travel-spring
