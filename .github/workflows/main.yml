@@ -28,12 +28,12 @@ jobs:
 
     - name: Test with Gradle
       run: |
-        cd ./travel
+        cd ./demo
         ./gradlew test
         
     - name: Build with Gradle
       run: |
-        cd ./travel
+        cd ./demo
         ./gradlew build -x test
   
     - name: Make zip file
