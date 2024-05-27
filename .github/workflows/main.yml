@@ -38,6 +38,7 @@ jobs:
   
     - name: Make zip file
       run: |
+        cd ./demo
         mkdir deploy
         cp ./build/libs/*.jar ./deploy/
         zip -r -qq -j ./spring-build.zip ./deploy
