@@ -56,3 +56,9 @@ jobs:
         aws s3 cp \
            --region ap-northeast-2 \
           ./spring-build.zip s3://travel-spring
+
+    - name: Code Deploy
+      run: aws deploy create-deployment --application-name spring-deploy
+         --deployment-config-name CodeDeployDefault.OneAtATime
+         --deployment-group-name spring-deploy-group
+         --s3-location bucket=travel-spring,bundleType=zip,key=spring-build.zip
