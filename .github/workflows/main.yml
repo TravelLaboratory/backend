@@ -26,8 +26,15 @@ jobs:
         echo "${{ secrets.APPLICATION }}" > ./src/main/resources/application.yml
       shell: bash
 
+    - name: Test with Gradle
+      run: |
+        cd ./travel
+        ./gradlew test
+        
     - name: Build with Gradle
-      run: ./gradlew build
+      run: |
+        cd ./travel
+        ./gradlew build -x test
   
     - name: Make zip file
       run: |
