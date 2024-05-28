@@ -40,11 +40,13 @@ jobs:
       run: |
         cd ./demo
         mkdir deploy
-        cp ./appspec.yml ./deploy/
-        cp ./Dockerfile ./deploy/
-        cp ./scripts/*.sh ./deploy/
-        cp ./build/libs/*.jar ./deploy/
-        zip -r -qq -j ./spring-build.zip ./deploy
+        cd ..
+        cp ./appspec.yml ./demo/deploy/
+        cp ./Dockerfile ./demo/deploy/
+        cp ./*.sh ./demo/deploy/
+        cd ./demo
+        cp ./build/libs/*.jar ./demo/deploy/
+        zip -r -qq -j ./spring-build.zip ./demo/deploy
           
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
