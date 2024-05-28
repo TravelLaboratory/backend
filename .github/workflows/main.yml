@@ -41,6 +41,8 @@ jobs:
         cd ./demo
         mkdir deploy
         cd ..
+        cp ./docker-compose.blue.yml ./demo/deploy/
+        cp ./docker-compose.green.yml ./demo/deploy/
         cp ./appspec.yml ./demo/deploy/
         cp ./Dockerfile ./demo/deploy/
         cp ./*.sh ./demo/deploy/
